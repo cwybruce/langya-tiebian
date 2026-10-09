@@ -12,16 +12,27 @@ try {
 }
 
 const appPath = path.resolve(__dirname, '..');
+const debug = process.argv.includes('--debug') || process.argv.includes('-d');
 
-const child = spawn(electronBinary, [appPath], {
-  detached: true,
-  stdio: 'ignore',
-  windowsHide: true,
-});
+if (debug) {
+  // 前台模式：报错直接打到终端，方便排查
+  const child = spawn(electronBinary, [appPath], { stdio: 'inherit' });
+  child.on('error', (err) => {
+    console.error('琅琊铁鞭启动失败:', err.message);
+    process.exit(1);
+  });
+} else {
+  const child = spawn(electronBinary, [appPath], {
+    detached: true,
+    stdio: 'ignore',
+    windowsHide: true,
+  });
 
-child.on('error', (err) => {
-  console.error('琅琊铁鞭启动失败:', err.message);
-  process.exit(1);
-});
+  child.on('error', (err) => {
+    console.error('琅琊铁鞭启动失败:', err.message);
+    console.error('试试前台模式看报错: tiebian --debug');
+    process.exit(1);
+  });
 
-child.unref();
+  child.unref();
+}

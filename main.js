@@ -286,6 +286,13 @@ app.whenReady().then(async () => {
     ])
   );
   tray.on('click', toggleOverlay);
+  // 首次启动冒个泡，免得用户以为没跑起来（Windows）
+  if (process.platform === 'win32') {
+    tray.displayBalloon({
+      title: '琅琊铁鞭',
+      content: '已就位！点击托盘图标，抽他。',
+    });
+  }
 });
 
 app.on('window-all-closed', e => e.preventDefault()); // keep alive in tray
