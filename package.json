@@ -1,1 +1,54 @@
-{"bin":{"langya-tiebian":"bin/langya-tiebian.js","tiebian":"bin/langya-tiebian.js"},"bugs":{"url":"https://github.com/cwybruce/langya-tiebian/issues"},"dependencies":{"electron":"^33.0.0","koffi":"^2.9.0"},"description":"琅琊铁鞭：Claude 跑太慢？一鞭抽醒","engines":{"node":">=18.0.0"},"files":["main.js","preload.js","overlay.html","sounds","icon","bin/langya-tiebian.js","README.md","LICENSE"],"homepage":"https://github.com/cwybruce/langya-tiebian#readme","keywords":["electron","tray","overlay","cli","claude","whip"],"license":"MIT","main":"main.js","name":"langya-tiebian","os":["darwin","linux","win32"],"repository":{"type":"git","url":"git+https://github.com/cwybruce/langya-tiebian.git"},"scripts":{"dev":"electron .","pack":"npm pack","start":"electron ."},"version":"1.0.0"}
+{
+  "bin": {
+    "langya-tiebian": "bin/langya-tiebian.js",
+    "tiebian": "bin/langya-tiebian.js"
+  },
+  "bugs": {
+    "url": "https://github.com/cwybruce/langya-tiebian/issues"
+  },
+  "dependencies": {
+    "electron": "^33.0.0",
+    "koffi": "^2.9.0"
+  },
+  "description": "琅琊铁鞭：Claude 跑太慢？一鞭抽醒",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "main.js",
+    "preload.js",
+    "overlay.html",
+    "sounds",
+    "icon",
+    "bin/langya-tiebian.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "homepage": "https://github.com/cwybruce/langya-tiebian#readme",
+  "keywords": [
+    "electron",
+    "tray",
+    "overlay",
+    "cli",
+    "claude",
+    "whip"
+  ],
+  "license": "MIT",
+  "main": "main.js",
+  "name": "langya-tiebian",
+  "os": [
+    "darwin",
+    "linux",
+    "win32"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cwybruce/langya-tiebian.git"
+  },
+  "scripts": {
+    "dev": "electron .",
+    "pack": "npm pack",
+    "start": "electron ."
+  },
+  "version": "1.0.2"
+}
